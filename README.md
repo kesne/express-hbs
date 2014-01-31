@@ -24,9 +24,10 @@ To use with express 3.
 Options for `#express3`
 
     hbs.express3({
-      partialsDir: "{String/Array} [Required] Path to partials templates, one or several directories",
-
-      // OPTIONAL settings
+      partialsDir: "{String|[String]}
+        Path to partials templates, one or several directories. Default
+        is to search for files prefixed with '_'.
+      ",
       blockHelperName: "{String} Override 'block' helper name.",
       contentHelperName: "{String} Override 'contentFor' helper name.",
       defaultLayout: "{String} Absolute path to default layout template",
@@ -39,7 +40,6 @@ Options for `#express3`
     });
 
 
-Partials may use any extension, which is better for syntax highlighting.
 
 
 ## Syntax
@@ -108,6 +108,17 @@ template to have its content included in the declared "parent" layout.  Be
 aware that too much nesting can impact performances, and stay away from
 infinite loops!
 
+
+## Partials
+
+Partials may use any extension to facilicate syntax highlighting.
+
+If `partialsDir` options is omitted then express-hbs treates any file
+prefixed with `_` within express' views directory as a partial.
+
+Examples with `partialsDir` omitted
+
+    {{> footer}}    // expects _footer.hbs
 
 ## Helpers
 

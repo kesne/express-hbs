@@ -34,7 +34,7 @@ function create(hbs, env) {
   });
 
 // Register Async helpers
-  hbs.registerAsyncHelper('readFile', function(filename, cb) {
+  hbs.registerAsyncHelper('readFile', function(filename, context, cb) {
     fs.readFile(path.join(viewsDir, filename), 'utf8', function(err, content) {
       cb(new hbs.SafeString(content));
     });

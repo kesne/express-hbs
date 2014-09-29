@@ -1,5 +1,7 @@
 # express-hbs
 
+This fork adds in multiple parameter support for registerAsyncHelper.
+
 Express 3 handlebars template engine with multiple layouts, blocks and cached partials.
 
 Open source project from [Barc](http://barc.com), instant real-time forum on any website.
